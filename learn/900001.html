@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TOPIC</title>
+<style>
+  /* The drawn colour: --bg is the page, --ink the text on it. */
+  :root { --bg: #a6ea1b; --ink: #09090b; }
+  html, body { height: 100%; margin: 0; overflow: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: system-ui, sans-serif;
+    display: grid;
+    place-items: center;
+  }
+  main { width: min(92vw, 1100px); display: grid; gap: clamp(12px, 3vh, 32px); }
+  h1 { font-size: clamp(32px, 8vh, 96px); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+  .lede { font-size: clamp(16px, 2.6vh, 28px); margin: 0; opacity: 0.85; }
+  .facts {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; gap: clamp(8px, 1.6vh, 20px);
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+  .facts li {
+    border: 2px solid currentColor; border-radius: 16px;
+    padding: clamp(10px, 2vh, 22px);
+    font-size: clamp(14px, 2.1vh, 22px);
+  }
+  .facts strong { display: block; font-size: 1.4em; }
+  footer { font-size: clamp(12px, 1.6vh, 16px); opacity: 0.7; }
+</style>
+</head>
+<body>
+<main>
+  <h1>TOPIC</h1>
+  <p class="lede">One line about it, made up.</p>
+  <ul class="facts">
+    <li><strong>First</strong> a small made-up fact</li>
+    <li><strong>Second</strong> another one</li>
+    <li><strong>Third</strong> and one more</li>
+  </ul>
+  <footer>A practice page from the Learn DevBench tour.</footer>
+</main>
+</body>
+</html>
