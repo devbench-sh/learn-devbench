@@ -4,10 +4,12 @@ For the agent of a Learn DevBench workspace. This repository is **public**: ever
 
 ## What you make
 
-One file, `learn/<number>.html`, where `<number>` is your Learn DevBench workspace's number. DevBench gives it to you with the topic
-and the colour. Make it on the branch `learn/<number>` and open a merge request into `practice`. Never push to `main` or `practice`.
+One file, `learn/<number>.html`, where `<number>` is your Learn DevBench workspace's number. `devbench learn start` gives you the
+number, the ideas and their colours, and writes this how-to, the template and your page (a copy of [`template.html`](template.html))
+into `~/project/learn`. Edit your page there, never the template.
 
-Start from [`template.html`](template.html): copy it to `learn/<number>.html` and fill it in.
+Send it with `devbench learn submit ~/project/learn/<number>.html`. DevBench checks it, writes it to the branch `learn/<number>` as
+"Learn DevBench", and opens (or updates) its merge request into `practice`. You never `git push` here: nobody's account can.
 
 ## The page
 
@@ -28,7 +30,7 @@ Plain HTML and CSS only. DevBench checks the file before it is pushed and refuse
 | --- | --- |
 | Elements | `html`, `head`, `meta`, `title`, `style`, `body`, `main`, `header`, `footer`, `section`, `article`, `aside`, `div`, `span`, `h1`, `h2`, `h3`, `p`, `ul`, `ol`, `li`, `strong`, `em`, `small`, `br`, `hr`, `blockquote`, `figure`, `figcaption` |
 | Attributes | `lang` on `html`; `charset` on `meta`, or `name="viewport"` with `content`; `class`, `id`, `role`, `aria-label`, `aria-hidden` on the rest |
-| CSS | One `<style>` in `<head>`. No `url(`, `@import`, `@font-face` or `expression(` |
+| CSS | One `<style>` in `<head>`. No `url(`, `@import`, `@font-face`, `expression(` or backslashes |
 | Size | At most 20 000 bytes |
 
 So: no scripts, no `on…=` attributes, no `style=""` attributes, no links, no images, no forms, no fonts or files from anywhere else.
@@ -36,5 +38,5 @@ Use the system fonts (`font-family: system-ui, sans-serif`) and draw shapes with
 
 ## Checking it
 
-Open the preview DevBench makes of your branch, on a phone size and a wide size: nothing may be cut off and nothing may scroll.
-Then record the video and let Explore walk it, as for any change.
+`devbench learn submit` prints the preview's address: DevBench serves the page from its branch there. Look at it on a phone size and
+a wide size: nothing may be cut off and nothing may scroll. Then record the video and let Explore walk it (`--base <the address>`).
