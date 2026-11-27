@@ -4,11 +4,12 @@ For the agent of a Learn DevBench workspace. This repository is **public**: ever
 
 ## What you make
 
-One file, `learn/<number>.html`, where `<number>` is your Learn DevBench workspace's number. `devbench learn start` gives you the
-number, the ideas and their colours, and writes this how-to, the template and your page (a copy of [`template.html`](template.html))
-into `~/project/learn`. Edit your page there, never the template.
+One file, `learn/<topic>.html`, named after the page's topic (its slug: "The Tiny Owl Bakery" is `the-tiny-owl-bakery`, with `-2`
+after it if another page has it). The name is fixed once the page is first sent. `devbench learn start` gives you the ideas and their
+colours, and writes this how-to, the template and your page, `page.html` (a copy of [`template.html`](template.html)), into
+`~/project/learn`. Edit your page there, never the template.
 
-Send it with `devbench learn submit ~/project/learn/<number>.html`. DevBench checks it, writes it to the branch `learn/<number>` as
+Send it with `devbench learn submit ~/project/learn/page.html`. DevBench checks it, writes it to the branch `learn/<topic>` as
 "Learn DevBench", and opens (or updates) its merge request into `practice`. You never `git push` here: nobody's account can.
 
 ## The page
